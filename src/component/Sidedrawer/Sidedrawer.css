@@ -1,0 +1,33 @@
+.sideDrawer{
+  padding-top: 15px;
+  position: fixed;
+  width: 25%;
+  -webkit-transition: 0.33s all ease;
+  transition: 0.33s all ease;
+  z-index: 11;
+}
+
+.sideDrawer-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sideDrawer-list li {
+  padding: 10px 40px;
+}
+
+.list-selected{
+  background-color: #F7F7F7;
+  color: #5225A1;
+}
+
+.divider {
+  margin-top: 6px;
+  border: 1px solid #F7F7F7;
+}
+
+.sideDrawer-list li .list-icon{
+  margin-right: 20px;
+  font-size: 20px;
+}
