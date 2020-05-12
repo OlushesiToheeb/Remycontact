@@ -1,0 +1,12 @@
+.Header{
+  box-sizing: border-box;
+  position: fixed;
+  height: 65px;
+  width: 100%;
+  padding: 0 3%;
+  background-color: #5700A0;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
