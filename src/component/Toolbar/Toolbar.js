@@ -4,7 +4,7 @@ import ot from '../../assets/ot.png';
 import ToggleSidedrawer from '../Toolbar/ToggleSidedrawer/ToggleSidedrawer';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faBars} from '@fortawesome/free-solid-svg-icons';
+import {faSearch} from '@fortawesome/free-solid-svg-icons';
 
 class Toolbar extends React.Component{
 
@@ -13,19 +13,26 @@ class Toolbar extends React.Component{
   render(){
     return(
       <header  className = "Header">
-        <ToggleSidedrawer />
-        <h2>Remy Contact</h2>
-        <form className="inputs-icon">
-          <FontAwesomeIcon 
-            icon={faBars} 
-            className="SearchIcon" 
-          />
-          <input type="text" 
-          placeholder="Search" 
-          className="input-field"
-          />
-        </form>
-        <img src={ot} alt="Profile"/>
+
+        <div className="header-left">
+          <ToggleSidedrawer />
+          <h1>Remy Contact</h1>
+        </div>
+        <div className="header-right">
+          <form className="inputs-wrapper">
+            <FontAwesomeIcon 
+              icon={faSearch} 
+              className="SearchIcon" 
+            />
+            <input type="text" 
+            placeholder="Search" 
+            className="input-field"
+            />
+          </form>
+          <div className="header-profile-logo">
+            <img src={ot} alt="Profile" />
+          </div>
+        </div>
       </header>
     )
   }

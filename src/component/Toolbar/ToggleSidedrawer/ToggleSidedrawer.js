@@ -7,8 +7,8 @@ const ToggleSidedrawer = (props) =>(
     <FontAwesomeIcon 
     icon={faBars} 
     onClick={props.clicked}
-    className="ToggleButton" 
+    className="ToggleSidedrawer" 
     />
 )
 
-export default ToggleSidedrawer ;
+export default ToggleSidedrawer;

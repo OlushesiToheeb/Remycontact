@@ -10,3 +10,110 @@
   align-items: center;
   z-index: 1;
 }
+
+.header-left{
+  width: 20%;
+  display: flex;
+  align-items: center;
+  margin-right: 25px;
+}
+
+.header-left h1{
+  display: block;
+  font-size: 1.5em;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  flex:1;
+  padding-left: 20px;
+  margin-left: 10%;
+}
+
+
+
+.header-right{
+  width: 72%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.inputs-wrapper{
+  flex:1; 
+}
+
+.inputs-wrapper .SearchIcon { 
+  position: absolute; 
+  padding: 9px 13px;
+  top: 2px;
+  left:0;
+  color:#fff;
+  font-size: 1.2em;
+} 
+
+.inputs-wrapper {  
+  margin-bottom: 5px;
+  position: relative;
+  width: 90%;
+  outline: none;
+}
+
+.inputs-wrapper input[type=text]{
+  padding-left: 50px;
+}
+
+.inputs-wrapper input::placeholder{
+  color:rgb(210, 169, 211);
+  font-weight: bold;
+}
+
+input { 
+  width: calc(100% - 60px);
+  height: 25px;
+  padding: 10px;
+  background-color: #7019AF;
+  color:#fff;
+  outline: none;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border:none;
+}
+
+input[type=text]:focus {
+  color:#000;
+  background-color: #FFF;
+}
+
+.header-profile-logo{
+  height: 35px;
+  width: 35px;
+}
+
+.header-profile-logo img{
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+  flex: 1;
+  margin-left: 180%;
+}
+
+@media(max-width:500px){
+  .header-left{
+    width: 10%;
+  }
+  .header-left h1{
+    margin-left: none;
+    font-size: 1em;
+  }
+
+  .header-right {
+    width: 60%;
+    margin-left: 18%;
+  }
+
+  .header-profile-logo img {
+    margin-left: 50%;
+  }
+}
