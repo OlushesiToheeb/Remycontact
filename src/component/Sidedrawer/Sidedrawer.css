@@ -1,9 +1,8 @@
 .sideDrawer{
   padding-top: 15px;
   position: fixed;
-  width: 25%;
-  -webkit-transition: 0.33s all ease;
-  transition: 0.33s all ease;
+  width: 25% !important;
+  transition: 0.33s all ease-in-out;
   z-index: 11;
 }
 
@@ -31,3 +30,9 @@
   margin-right: 20px;
   font-size: 20px;
 }
+
+.open{
+  transform: translateX(-100%);
+}
+
+

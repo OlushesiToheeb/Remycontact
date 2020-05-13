@@ -5,12 +5,23 @@ import './ContactBuilder.css';
 
 
 class ContactBuilder extends React.Component{
+  state={
+    showSideDrawer :false
+  }
+
+  sideDrawerToggleHandler = () =>{
+    this.setState((prevState) =>{ 
+      return{
+        showSideDrawer: !prevState.showSideDrawer
+      }});
+  }
+            
   render(){
     return(
       <div>
-        <Toolbar/>
+        <Toolbar drawToggleClicked={this.sideDrawerToggleHandler}/>
         <div className="main-wrapper">
-          <SideDrawer/>
+          <SideDrawer open={this.state.showSideDrawer}/>
         </div>
       </div>   
     )

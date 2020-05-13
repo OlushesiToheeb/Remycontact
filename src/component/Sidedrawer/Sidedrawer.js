@@ -6,8 +6,13 @@ import {faQuestionCircle} from '@fortawesome/free-solid-svg-icons';
 import {faCog} from '@fortawesome/free-solid-svg-icons';
 
 const sideDrawer = (props) => {
+  let attachedClasses = ["sideDrawer" ];
+    if(props.open){
+        attachedClasses = ["sideDrawer", "open"];
+    }   
   return (
-    <div className="sideDrawer">
+    
+    <div className={attachedClasses.join(' ')}>
       <ul className="sideDrawer-list">
         <li className='list-selected'>
           <FontAwesomeIcon 

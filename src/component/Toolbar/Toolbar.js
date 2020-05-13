@@ -15,7 +15,7 @@ class Toolbar extends React.Component{
       <header  className = "Header">
 
         <div className="header-left">
-          <ToggleSidedrawer />
+          <ToggleSidedrawer clicked={this.props.drawToggleClicked} />
           <h1>Remy Contact</h1>
         </div>
         <div className="header-right">
