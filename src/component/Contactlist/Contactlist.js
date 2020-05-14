@@ -3,7 +3,26 @@ import React from 'react';
 import './Contactlist.css';
 
 class Contactlist extends React.Component{
+
+  state={
+    toggleIcon :false
+  }
+
+  toggleIconHandler = () =>{
+    this.setState((prevState) =>{ 
+      return{
+        toggleIcon: !prevState.toggleIcon
+      }});
+  }
+
+
   render(){
+    
+    let changeIconClass = ['far fa-square'];
+    if(this.state.toggleIcon){
+      changeIconClass = ['fas fa-check-square']
+    }
+
     return(
       <div className="contact-view display-wm">
         <div className="contact-view-wrapper">
@@ -14,9 +33,10 @@ class Contactlist extends React.Component{
           <div className="list-table">
             <table>
               <tbody>
-                <tr className="row">
+                <tr className={this.state.toggleIcon ? ['row', 'bg'].join(' ') : ['row'] }>
                   <td className='list-icon contact-selected'>
-                  <i class="far fa-square"></i>
+                  <i className={changeIconClass.join('')}
+                  onClick={this.toggleIconHandler}></i>
                   </td>
                   <td className='list-image'>
                     <img src="https://gravatar.com/avatar/0d0ffa03556e256298a110179b0a7fd9?s=200&d=robohash&r=x" alt="profile"/>

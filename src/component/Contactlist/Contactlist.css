@@ -21,6 +21,7 @@
 
 .list-table table {
   width: 100%;
+  color:#191414;
 }
 
 .list-table tr{
@@ -33,6 +34,10 @@
 }
 
 .list-table tr:hover {
+  background-color: #efefef;
+}
+
+.bg{
   background-color: #efefef;
 }
 

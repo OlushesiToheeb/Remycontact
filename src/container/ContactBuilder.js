@@ -23,7 +23,8 @@ class ContactBuilder extends React.Component{
         <Toolbar drawToggleClicked={this.sideDrawerToggleHandler}/>
         <div className="main-wrapper">  
           <SideDrawer open={this.state.showSideDrawer}/>
-          <Contactlist/>
+          <Contactlist 
+          />
         </div>
       </div>   
     )
