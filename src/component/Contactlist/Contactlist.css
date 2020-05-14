@@ -1,0 +1,87 @@
+.contact-view{
+  border-left: 2px solid #F7F7F7;
+  height: 100vh;
+}
+
+.display-wm{
+  width: calc(100% - 25%);
+  margin-left: auto;
+}
+
+.contact-view-wrapper{
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-view-wrapper h3 {
+  font-weight: 500;
+  color: #191414;
+}
+
+.list-table table {
+  width: 100%;
+}
+
+.list-table tr{
+  height: 45px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.list-table tr:hover {
+  background-color: #efefef;
+}
+
+.list-table td {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.list-table tr:hover .list-icon-group i, .list-table tr:hover .contact-selected i {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.list-table tr .list-icon-group i, .list-table tr .contact-selected i {
+  opacity: 0;
+  margin-left: 16px;
+}
+
+.list-icon{
+  width: 5%;
+}
+
+.list-image{
+  width: 4%;
+  margin-right: 25px;
+}
+
+
+.list-image img {
+  width: 100%;
+  border-radius: 100%;
+}
+
+.list-name {
+  width: 25%;
+}
+
+.list-name > span:nth-child(1) {
+  margin-right: 8px;
+}
+
+.list-mail {
+  width: 25%;
+}
+
+.list-number{
+  min-width: 25%;
+}
+
+
+
