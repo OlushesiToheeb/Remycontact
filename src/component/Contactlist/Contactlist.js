@@ -24,7 +24,7 @@ class Contactlist extends React.Component{
     }
 
     return(
-      <div className="contact-view display-wm">
+      <div className={this.props.open? ["contact-view display-w"] : ["contact-view display-wm"] }>
         <div className="contact-view-wrapper">
           <h3>Starred Contacts(0)</h3>
         </div>

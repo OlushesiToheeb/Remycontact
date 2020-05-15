@@ -8,6 +8,10 @@
   margin-left: auto;
 }
 
+.display-w{
+  width:100%;
+}
+
 .contact-view-wrapper{
   padding: 25px;
   display: flex;

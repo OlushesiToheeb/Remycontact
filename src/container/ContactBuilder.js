@@ -24,7 +24,7 @@ class ContactBuilder extends React.Component{
         <div className="main-wrapper">  
           <SideDrawer open={this.state.showSideDrawer}/>
           <Contactlist 
-          />
+          open={this.state.showSideDrawer}/>
         </div>
       </div>   
     )
