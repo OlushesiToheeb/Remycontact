@@ -1,6 +1,7 @@
 .contact-view{
   border-left: 2px solid #F7F7F7;
   height: 100vh;
+  background-color:#fff;
 }
 
 .display-wm{
@@ -10,6 +11,7 @@
 
 .display-w{
   width:100%;
+  z-index: 20; 
 }
 
 .contact-view-wrapper{

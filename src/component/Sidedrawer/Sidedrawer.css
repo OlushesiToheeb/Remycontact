@@ -2,7 +2,7 @@
   padding-top: 15px;
   position: fixed;
   width: 25% !important;
-  transition: 0.33s all ease-in-out;
+  transition: 0.33s all ease;
   z-index: 11;
 }
 
