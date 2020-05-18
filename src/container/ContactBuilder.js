@@ -4,6 +4,7 @@ import SideDrawer from '../component/Sidedrawer/Sidedrawer';
 import Contactlist from '../component/Contactlist/Contactlist';
 import './ContactBuilder.css';
 import {connect} from 'react-redux';
+import * as contactsActions from '../Store/actions/index';
 
 
 class ContactBuilder extends React.Component{
@@ -25,11 +26,14 @@ class ContactBuilder extends React.Component{
         <div className="main-wrapper">  
           <SideDrawer 
           open={this.state.showSideDrawer}
-          showContacts={this.props.contactList}/>
+          showContacts={this.props.contactList}
+          />
           <Contactlist 
           open={this.state.showSideDrawer}
-          showContacts={this.props.contactList}/>
+          showContacts={this.props.contactList}
+          removeContact={this.props.onDeleteContact}/>
         </div>
+        
       </div>   
     )
   }
@@ -41,5 +45,11 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(ContactBuilder)
+const mapDispatchToProps = (dispatch) => {
+  return{
+    onDeleteContact : (id) => dispatch(contactsActions.deleteContact(id))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ContactBuilder)
 

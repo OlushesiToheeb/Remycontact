@@ -19,7 +19,7 @@ const sideDrawer = (props) => {
             icon={faAddressBook} 
             className="list-icon" 
           />
-          Contacts({props.showContacts.length})
+          Contacts({props.showContacts ? props.showContacts.length:0})
         </li>
         <div className="divider"></div>
         <li>

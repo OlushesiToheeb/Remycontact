@@ -1,0 +1,1 @@
+export { deleteContact} from './actions';
