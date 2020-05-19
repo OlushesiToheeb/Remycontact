@@ -115,8 +115,13 @@
 
 .delete-contact {
   bottom: 15%;
+  display: none;
 }
 
 .create-new-contact i, .delete-contact i {
   color: #ffffff;
+}
+
+.display-f{
+  display: flex;
 }

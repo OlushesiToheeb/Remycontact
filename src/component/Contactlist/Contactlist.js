@@ -5,23 +5,21 @@ import './Contactlist.css';
 class Contactlist extends React.Component{
 
   state={
-    toggleIcon :false
+    toggleIconId:null
   }
 
-  toggleIconHandler = () =>{
-    this.setState((prevState) =>{ 
-      return{
-        toggleIcon: !prevState.toggleIcon
-      }});
+ 
+
+  toggleIconIdHandler = (id) => {
+    const {toggleIconId} = this.state;
+    // undefined - toggle off if the selected row clicked again
+    const newToggleIconId = toggleIconId === id ? undefined : id;
+    this.setState({toggleIconId: newToggleIconId})
   }
 
+  
 
   render(){
-    
-    let changeIconClass = ['far fa-square'];
-    if(this.state.toggleIcon){
-      changeIconClass = ['fas fa-check-square']
-    }
 
     return(  
         <div className={this.props.open? ["contact-view display-w"] : ["contact-view display-wm"] }>
@@ -35,10 +33,10 @@ class Contactlist extends React.Component{
                 <tbody>
                   {this.props.showContacts.map((contact, index) => 
                     
-                    <tr className={this.state.toggleIcon ? ['row', 'bg'].join(' ') : ['row'] } key={contact.id}>
+                    <tr className={this.state.toggleIconId === contact.id ? ['row', 'bg'].join(' ') : ['row'] } key={contact.id}>
                       <td className='list-icon contact-selected'>
-                      <i className={changeIconClass}
-                      onClick={this.toggleIconHandler}></i>
+                      <i className={this.state.toggleIconId === contact.id ? ['fas fa-check-square'] : ['far fa-square']}
+                        onClick={() => this.toggleIconIdHandler(contact.id)}></i>
                       </td>
                       <td className='list-image'>
                         <img src={contact.avatarUrl} alt="profile"/>
@@ -59,7 +57,7 @@ class Contactlist extends React.Component{
                           <i className="fas fa-pen"></i>
                         </div>
                         <i className="fas fa-ellipsis-v" 
-                          onClick={() => { this.props.removeContact(contact.id); }}></i>
+                          ></i>
                       </td>
                     </tr>
                   )}
@@ -69,7 +67,7 @@ class Contactlist extends React.Component{
           </div>
 
           <div className="delete-contact">
-            <i class="fas fa-trash" onClick={this.props.removeContact}></i>
+            <i class="fas fa-trash" onClick={() => { this.props.removeContact() }}></i>
           </div>
           <div className="create-new-contact">
               <i class="fas fa-plus"></i>
