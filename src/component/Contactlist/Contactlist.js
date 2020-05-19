@@ -11,9 +11,10 @@ class Contactlist extends React.Component{
  
 
   toggleIconIdHandler = (id) => {
+    console.log(id)
     const {toggleIconId} = this.state;
-    // undefined - toggle off if the selected row clicked again
     const newToggleIconId = toggleIconId === id ? undefined : id;
+    console.log(newToggleIconId)
     this.setState({toggleIconId: newToggleIconId})
   }
 
@@ -57,7 +58,7 @@ class Contactlist extends React.Component{
                           <i className="fas fa-pen"></i>
                         </div>
                         <i className="fas fa-ellipsis-v" 
-                          ></i>
+                          onClick={() => this.toggleIconIdHandler(contact.id)}></i>
                       </td>
                     </tr>
                   )}
@@ -66,8 +67,15 @@ class Contactlist extends React.Component{
             </div>
           </div>
 
-          <div className="delete-contact">
-            <i class="fas fa-trash" onClick={() => { this.props.removeContact() }}></i>
+          <div className={this.state.toggleIconId !== undefined ? ['display-f','delete-contact'].join(' ') : 'delete-contact'}
+            onClick={
+              () => {
+                if (this.state.toggleIconId !== undefined) {
+                    this.props.removeContact(this.state.toggleIconId);
+                }
+              }
+            }>
+            <i class="fas fa-trash"></i>
           </div>
           <div className="create-new-contact">
               <i class="fas fa-plus"></i>

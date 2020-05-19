@@ -44,7 +44,6 @@ const reducer = (state=initialState, action) =>{
        return {
           ...state,
       contacts: state.contacts.filter(c => {
-        console.log(action);
         return c.id !== action.id;
       })
     }
