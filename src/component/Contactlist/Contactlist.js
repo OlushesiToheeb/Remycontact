@@ -5,21 +5,26 @@ import './Contactlist.css';
 class Contactlist extends React.Component{
 
   state={
-    toggleIconId:null
+    toggleIconIds:[]
   }
 
  
 
   toggleIconIdHandler = (id) => {
-    console.log(id)
-    const {toggleIconId} = this.state;
-    const newToggleIconId = toggleIconId === id ? undefined : id;
-    console.log(newToggleIconId)
-    this.setState({toggleIconId: newToggleIconId})
+    const newToggleState = this.state.toggleIconIds;
+    const index = newToggleState.indexOf(id);
+    if (index > -1) {
+      newToggleState.splice(index, 1);
+      console.log('if', id)
+    }else{
+      newToggleState.push(id)
+      console.log('else', id)
+    }
+    console.log(newToggleState)
+    this.setState({toggleIconIds: newToggleState})
   }
 
   
-
   render(){
 
     return(  
@@ -34,9 +39,9 @@ class Contactlist extends React.Component{
                 <tbody>
                   {this.props.showContacts.map((contact, index) => 
                     
-                    <tr className={this.state.toggleIconId === contact.id ? ['row', 'bg'].join(' ') : ['row'] } key={contact.id}>
+                    <tr className={this.state.toggleIconIds.includes(contact.id) ? ['row', 'bg'].join(' ') : ['row'] } key={contact.id}>
                       <td className='list-icon contact-selected'>
-                      <i className={this.state.toggleIconId === contact.id ? ['fas fa-check-square'] : ['far fa-square']}
+                      <i className={this.state.toggleIconIds.includes(contact.id) ? ['fas fa-check-square'] : ['far fa-square']}
                         onClick={() => this.toggleIconIdHandler(contact.id)}></i>
                       </td>
                       <td className='list-image'>
@@ -58,7 +63,7 @@ class Contactlist extends React.Component{
                           <i className="fas fa-pen"></i>
                         </div>
                         <i className="fas fa-ellipsis-v" 
-                          onClick={() => this.toggleIconIdHandler(contact.id)}></i>
+                          onClick={() => this.toggleIconIdsHandler(contact.id)}></i>
                       </td>
                     </tr>
                   )}
@@ -67,11 +72,11 @@ class Contactlist extends React.Component{
             </div>
           </div>
 
-          <div className={this.state.toggleIconId !== undefined ? ['display-f','delete-contact'].join(' ') : 'delete-contact'}
+          <div className={this.state.toggleIconIds.length > 0 ? ['delete-contact','display-f'].join(' ') : 'delete-contact'}
             onClick={
               () => {
-                if (this.state.toggleIconId !== undefined) {
-                    this.props.removeContact(this.state.toggleIconId);
+                if (this.state.toggleIconIds.length > 0) {
+                    this.props.removeContact(this.state.toggleIconIds);
                 }
               }
             }>

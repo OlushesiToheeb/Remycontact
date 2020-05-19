@@ -1,9 +1,8 @@
 import * as actionTypes  from  './actionTypes';
 
-export const deleteContact = (id) =>{
+export const deleteContact = (ids) =>{
   return{
     type:actionTypes.DELETE_CONTACT,
-    id
+    ids
   }
-
 }

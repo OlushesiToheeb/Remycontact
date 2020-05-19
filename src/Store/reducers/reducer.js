@@ -43,9 +43,9 @@ const reducer = (state=initialState, action) =>{
     case actionTypes.DELETE_CONTACT :
        return {
           ...state,
-      contacts: state.contacts.filter(c => {
-        return c.id !== action.id;
-      })
+      contacts: state.contacts.filter(function(value) {
+        return action.ids.indexOf(value.id) === -1;
+    })
     }
     default:
       return state  
