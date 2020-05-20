@@ -24,6 +24,10 @@ class ContactBuilder extends React.Component{
   showModalHandler=()=>{
     this.setState({showModal:true})
   }
+
+  closeModalHandler=()=>{
+    this.setState({showModal:false})
+  }
             
   render(){
     return(
@@ -41,6 +45,7 @@ class ContactBuilder extends React.Component{
           popModal={this.showModalHandler}/>
           <Modal
             show={this.state.showModal}
+            closeModal={this.closeModalHandler}
             >
             Hello
           </Modal>
