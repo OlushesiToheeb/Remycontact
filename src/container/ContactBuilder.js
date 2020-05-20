@@ -2,6 +2,7 @@ import React from 'react';
 import Toolbar from '../component/Toolbar/Toolbar';
 import SideDrawer from '../component/Sidedrawer/Sidedrawer';
 import Contactlist from '../component/Contactlist/Contactlist';
+import Modal from '../component/Modal/Modal';
 import './ContactBuilder.css';
 import {connect} from 'react-redux';
 import * as contactsActions from '../Store/actions/index';
@@ -9,7 +10,8 @@ import * as contactsActions from '../Store/actions/index';
 
 class ContactBuilder extends React.Component{
   state={
-    showSideDrawer :false
+    showSideDrawer :false,
+    showModal: false
   }
 
   sideDrawerToggleHandler = () =>{
@@ -17,6 +19,10 @@ class ContactBuilder extends React.Component{
       return{
         showSideDrawer: !prevState.showSideDrawer
       }});
+  }
+
+  showModalHandler=()=>{
+    this.setState({showModal:true})
   }
             
   render(){
@@ -31,9 +37,14 @@ class ContactBuilder extends React.Component{
           <Contactlist 
           open={this.state.showSideDrawer}
           showContacts={this.props.contactList}
-          removeContact={this.props.onDeleteContact}/>
+          removeContact={this.props.onDeleteContact}
+          popModal={this.showModalHandler}/>
+          <Modal
+            show={this.state.showModal}
+            >
+            Hello
+          </Modal>
         </div>
-        
       </div>   
     )
   }

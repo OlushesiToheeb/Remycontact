@@ -5,22 +5,18 @@ import './Contactlist.css';
 class Contactlist extends React.Component{
 
   state={
-    toggleIconIds:[]
+    toggleIconIds:[],
   }
 
- 
 
   toggleIconIdHandler = (id) => {
     const newToggleState = this.state.toggleIconIds;
     const index = newToggleState.indexOf(id);
     if (index > -1) {
       newToggleState.splice(index, 1);
-      console.log('if', id)
     }else{
       newToggleState.push(id)
-      console.log('else', id)
     }
-    console.log(newToggleState)
     this.setState({toggleIconIds: newToggleState})
   }
 
@@ -38,7 +34,6 @@ class Contactlist extends React.Component{
               <table>
                 <tbody>
                   {this.props.showContacts.map((contact, index) => 
-                    
                     <tr className={this.state.toggleIconIds.includes(contact.id) ? ['row', 'bg'].join(' ') : ['row'] } key={contact.id}>
                       <td className='list-icon contact-selected'>
                       <i className={this.state.toggleIconIds.includes(contact.id) ? ['fas fa-check-square'] : ['far fa-square']}
@@ -82,7 +77,12 @@ class Contactlist extends React.Component{
             }>
             <i class="fas fa-trash"></i>
           </div>
-          <div className="create-new-contact">
+          <div className="create-new-contact"
+            onClick={() =>{
+             this.props.popModal()
+             alert('hello')
+            }}
+            >
               <i class="fas fa-plus"></i>
           </div>
         </div>
