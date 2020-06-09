@@ -1,0 +1,118 @@
+.modal-title {
+    height: 40px;
+    font-size: 22px;
+    background-color: #F7F7F7;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-title h3{
+  font-weight: normal;
+}
+
+.modal-body {
+  display: flex;
+  padding: 5px 20px;
+}
+
+.modal-body-icon-row {
+  width: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.modal-body-icon-row .contact-avatar {
+  font-size: 40px;
+}
+
+.modal-body-icon-row i {
+  opacity: 0.6 !important;
+}
+
+.modal-body-input {
+  width: 80%;
+  padding-top: 23px;
+}
+
+.modal-body-input div {
+  margin-bottom: 10px;
+}
+
+.modal-body-input input{
+  height: 25px;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  outline: none;
+  box-shadow: none;
+  width: 100%;
+  padding: 0;
+}
+
+.modal-body__input--name input:nth-child(1), .modal-body__input--job input:nth-child(1) {
+  margin-right: 4%;
+}
+
+.modal-body__input--name input, .modal-body__input--job input {
+  width: 48%;
+}
+
+.modal-body__input--phone {
+  display: flex;
+}
+
+.modal-body__input--phone input {
+  margin-left: 10px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 20px;
+}
+
+.modal-footer > div:nth-child(1) {
+  color: #5700A0;
+  margin-right: 30px;
+}
+
+.modal-footer div {
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.button__button {
+  border: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  height: 36px;
+  line-height: 36px;
+  width: 100%;
+  border-radius: 2px;
+  transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  background-color: #5700A0;
+  text-align: center;
+}
+
+.button__title {
+  height: 36px;
+  border-radius: 2px;
+  transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  top: 0px;
+}
+
+.button__title div {
+  opacity: 1;
+  font-size: 14px;
+  letter-spacing: 0px;
+  font-weight: 500;
+  margin: 0px;
+  user-select: none;
+  padding-left: 16px;
+  padding-right: 16px;
+  color: #ffffff;
+}

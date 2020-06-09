@@ -3,6 +3,7 @@ import Toolbar from '../component/Toolbar/Toolbar';
 import SideDrawer from '../component/Sidedrawer/Sidedrawer';
 import Contactlist from '../component/Contactlist/Contactlist';
 import Modal from '../component/Modal/Modal';
+import AddContact from '../component/AddContact/AddContact'
 import './ContactBuilder.css';
 import {connect} from 'react-redux';
 import * as contactsActions from '../Store/actions/index';
@@ -47,7 +48,7 @@ class ContactBuilder extends React.Component{
             show={this.state.showModal}
             closeModal={this.closeModalHandler}
             >
-            Hello
+            <AddContact closeModal={this.closeModalHandler}/>
           </Modal>
         </div>
       </div>   

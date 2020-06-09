@@ -58,7 +58,7 @@ class Contactlist extends React.Component{
                           <i className="fas fa-pen"></i>
                         </div>
                         <i className="fas fa-ellipsis-v" 
-                          onClick={() => this.toggleIconIdsHandler(contact.id)}></i>
+                          onClick={() => this.toggleIconIdHandler(contact.id)}></i>
                       </td>
                     </tr>
                   )}
@@ -75,15 +75,12 @@ class Contactlist extends React.Component{
                 }
               }
             }>
-            <i class="fas fa-trash"></i>
+            <i className="fas fa-trash"></i>
           </div>
           <div className="create-new-contact"
-            onClick={() =>{
-             this.props.popModal()
-             alert('hello')
-            }}
+            onClick={this.props.popModal}
             >
-              <i class="fas fa-plus"></i>
+              <i className="fas fa-plus"></i>
           </div>
         </div>
     )
