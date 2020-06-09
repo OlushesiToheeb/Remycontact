@@ -6,3 +6,11 @@ export const deleteContact = (ids) =>{
     ids
   }
 }
+
+export const addContact = (data) => {
+  return{
+    type:actionTypes.ADD_CONTACT,
+    data
+  }
+  
+}

@@ -1,1 +1,1 @@
-export { deleteContact} from './actions';
+export { deleteContact, addContact} from './actions';

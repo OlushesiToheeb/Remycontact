@@ -47,6 +47,12 @@ const reducer = (state=initialState, action) =>{
         return action.ids.indexOf(value.id) === -1;
     })
     }
+
+    case actionTypes.ADD_CONTACT:
+      return{
+        ...state,
+        contacts: state.contacts.concat(action.data)
+      }
     default:
       return state  
   }

@@ -4,48 +4,49 @@ import './AddContact.css';
 class AddContact extends React.Component{
 
   state = {
-    firstName:'',
-    lastName:'',
+    name:'',
+    otherName:'',
     company:'',
     jobTitle:'',
-    email:'',
-    phoneNo:'',
+    emails:'',
+    number:'',
     notes:'',
     country:''
   }
 
-  handleChange = (e) => {
-    const { name, value} = e.target;
-    this.setState({ [name] : value})
+  handleChange = (event) => {
+    const { name, value } = event.target
+    this.setState({ [name]: value });
   }
 
-  close = this.props.closeModal;
 
   handleSubmit = (e) => {
     e.preventDefault()
-    const { 
-      firstName, 
-      lastName, 
-      company,
-      jobTitle,
-      email,
-      phoneNo,
-      notes,
-      country } = this.state
+      const { 
+        name, 
+        otherName, 
+        company,
+        jobTitle,
+        emails,
+        number,
+        notes,
+        country 
+      } = this.state
 
+      this.props.addContact(this.state);
 
       this.setState=({
-        firstName:'',
-        lastName:'',
+        name:'',
+        otherName:'',
         company:'',
         jobTitle:'',
-        email:'',
-        phoneNo:'',
+        emails:'',
+        number:'',
         notes:'',
         country:''
       })
 
-      this.close()
+      // this.props.closeModal()
       
   }
 
@@ -53,12 +54,12 @@ class AddContact extends React.Component{
   render(){
 
     const { 
-      firstName, 
-      lastName, 
+      name, 
+      otherName, 
       company,
       jobTitle,
-      email,
-      phoneNo,
+      emails,
+      number,
       notes,
       country } = this.state
 
@@ -83,15 +84,15 @@ class AddContact extends React.Component{
               <div className="modal-body__input--name">
                 <input 
                   type="text" 
-                  name="firstName" 
+                  name="name" 
                   placeholder="First Name" 
-                  value={firstName}
+                  value={name}
                   onChange={this.handleChange}/>
                 <input 
                   type="text" 
-                  name="lastName" 
+                  name="otherName" 
                   placeholder="Last Name" 
-                  value={lastName}
+                  value={otherName}
                   onChange={this.handleChange}/>
               </div>
               <div className="modal-body__input--job">
@@ -108,12 +109,12 @@ class AddContact extends React.Component{
                   value={jobTitle}
                   onChange={this.handleChange}/>
               </div>
-              <div className="modal-body__input--email">
+              <div className="modal-body__input--emails">
                 <input 
                   type="email" 
-                  name="email" 
+                  name="emails" 
                   placeholder="Email" 
-                  value={email}
+                  value={emails}
                   onChange={this.handleChange}/>
               </div>
               <div className="modal-body__input--phone">
@@ -127,9 +128,9 @@ class AddContact extends React.Component{
                 </select>
                   <input 
                     type="tel" 
-                    name="phoneNo" 
+                    name="number" 
                     placeholder="Phone" 
-                    value={phoneNo}
+                    value={number}
                     onChange={this.handleChange}/>
               </div>
               <div className="modal-body__input--notes">

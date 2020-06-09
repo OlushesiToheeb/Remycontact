@@ -48,7 +48,9 @@ class ContactBuilder extends React.Component{
             show={this.state.showModal}
             closeModal={this.closeModalHandler}
             >
-            <AddContact closeModal={this.closeModalHandler}/>
+            <AddContact 
+              closeModal={this.closeModalHandler} 
+              addContact={this.props.onAddContact}/>
           </Modal>
         </div>
       </div>   
@@ -64,7 +66,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return{
-    onDeleteContact : (ids) => dispatch(contactsActions.deleteContact(ids))
+    onDeleteContact : (ids) => dispatch(contactsActions.deleteContact(ids)),
+    onAddContact: (data) => dispatch(contactsActions.addContact(data))
   }
 }
 
